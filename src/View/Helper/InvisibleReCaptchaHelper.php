@@ -18,6 +18,13 @@ class InvisibleReCaptchaHelper extends Helper
     ];
 
     /**
+     * {@inheritdoc}
+     */
+    public function initialize(array $config)
+    {
+    }
+
+    /**
      * render method.
      *
      * @return string
@@ -26,10 +33,10 @@ class InvisibleReCaptchaHelper extends Helper
     {
         $config = $this->getConfig();
 
-        if ($config('data.sitekey') === null) {
+        if ($config['data']['sitekey'] === null) {
             throw new \RuntimeException();
         }
 
-        return $this->_View->element('recaptcha', $config);
+        return $this->_View->element('InvisibleReCaptcha.recaptcha', $config);
     }
 }

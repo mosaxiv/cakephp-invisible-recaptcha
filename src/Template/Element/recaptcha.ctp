@@ -13,16 +13,18 @@ endif;
     class="g-recaptcha"
     data-size="invisible"
     data-callback="_submitForm"
-    data-sitekey="<?= $data['key'] ?>"
+    data-sitekey="<?= $data['sitekey'] ?>"
     data-badge="<?= $data['badge'] ?>"
     data-type="<?= $data['type'] ?>"
 ></div>
 
+<?= $this->Html->script($url) ?>
 <script src="<?= $url ?>" async defer></script>
 <script>
+    var _submitForm;
     window.onload = function () {
         var _captchaForm = document.querySelector('#_g-recaptcha').closest('form');
-        var _submitForm = function () {
+        _submitForm = function () {
             _captchaForm.submit();
         };
         _captchaForm.addEventListener('submit',
