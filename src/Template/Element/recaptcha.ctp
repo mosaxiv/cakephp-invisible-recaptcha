@@ -18,7 +18,6 @@ endif;
     data-type="<?= $data['type'] ?>"
 ></div>
 
-<?= $this->Html->script($url) ?>
 <script src="<?= $url ?>" async defer></script>
 <script>
     var _submitForm;
