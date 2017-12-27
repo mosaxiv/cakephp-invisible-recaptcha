@@ -48,5 +48,4 @@ class InvisibleReCaptchaComponent extends Component
 
         return $response->json;
     }
-
 }
