@@ -11,7 +11,7 @@ class InvisibleReCaptchaHelper extends Helper
     protected $_defaultConfig = [
         'lang' => null,
         'data' => [
-            'sitekey' => null,
+            'sitekey' => '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
             'badge' => 'bottomright',
             'type' => 'image',
         ],
@@ -31,12 +31,6 @@ class InvisibleReCaptchaHelper extends Helper
      */
     public function render()
     {
-        $config = $this->getConfig();
-
-        if ($config['data']['sitekey'] === null) {
-            throw new \RuntimeException();
-        }
-
-        return $this->_View->element('InvisibleReCaptcha.recaptcha', $config);
+        return $this->_View->element('InvisibleReCaptcha.recaptcha', $this->getConfig());
     }
 }
