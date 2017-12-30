@@ -14,7 +14,11 @@ class InvisibleReCaptchaComponent extends Component
 
     protected $_defaultConfig = [
         'secretkey' => null,
-        'timeout' => 3
+        'sitekey' => null,
+        'timeout' => 3,
+        'hl' => null,
+        'badge' => 'bottomright',
+        'type' => 'image',
     ];
 
     /**
@@ -25,6 +29,14 @@ class InvisibleReCaptchaComponent extends Component
         if ($this->getConfig('secretkey') === null) {
             $this->setConfig('secretkey', Configure::readOrFail('recaptcha.secretkey'));
         }
+
+        if ($this->getConfig('sitekey') === null) {
+            $this->setConfig('sitekey', Configure::readOrFail('recaptcha.sitekey'));
+        }
+
+        $this->getController()->viewBuilder()->setHelpers([
+            'InvisibleReCaptcha.InvisibleReCaptcha' => $this->getConfig()
+        ]);
     }
 
     /**
