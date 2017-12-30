@@ -13,7 +13,8 @@ class InvisibleReCaptchaComponent extends Component
     const VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 
     protected $_defaultConfig = [
-        'secretkey' => null
+        'secretkey' => null,
+        'timeout' => 3
     ];
 
     /**
@@ -43,7 +44,9 @@ class InvisibleReCaptchaComponent extends Component
     {
         $request = $this->getController()->request;
 
-        $http = new Client();
+        $http = new Client([
+            'timeout' => $this->getConfig('timeout')
+        ]);
         $response = $http->post(self::VERIFY_URL, [
             'secret' => $this->getConfig('secretkey'),
             'response' => $request->getData('g-recaptcha-response'),
