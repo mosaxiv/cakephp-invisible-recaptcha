@@ -5,7 +5,7 @@
 
 $url = 'https://www.google.com/recaptcha/api.js';
 if ($hl !== null):
-    $url = $url . '?hl = ' . $hl;
+    $url = $url . '?hl=' . $hl;
 endif;
 ?>
 <div id="_g-recaptcha"></div>
