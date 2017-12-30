@@ -19,6 +19,7 @@ class InvisibleReCaptchaComponent extends Component
         'hl' => null,
         'badge' => 'bottomright',
         'type' => 'image',
+        'noscript' => true,
     ];
 
     /**

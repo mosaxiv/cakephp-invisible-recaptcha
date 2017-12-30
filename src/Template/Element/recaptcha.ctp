@@ -33,3 +33,16 @@ endif;
             });
     }
 </script>
+
+<?php if ($noscript): ?>
+    <noscript>
+        <div style="width: 302px; height: 422px; position: relative;">
+            <div style="width: 302px; height: 422px; position: absolute;">
+                <iframe src="https://www.google.com/recaptcha/api/fallback?k=<?= $sitekey ?>"
+                        frameborder="0" scrolling="no"
+                        style="width: 302px; height:422px; border-style: none;">
+                </iframe>
+            </div>
+        </div>
+    </noscript>
+<?php endif; ?>
