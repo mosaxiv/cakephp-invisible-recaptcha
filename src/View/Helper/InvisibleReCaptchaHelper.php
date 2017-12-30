@@ -11,7 +11,7 @@ use Cake\View\Helper;
 class InvisibleReCaptchaHelper extends Helper
 {
     protected $_defaultConfig = [
-        'lang' => null,
+        'hl' => null,
         'sitekey' => null,
         'badge' => 'bottomright',
         'type' => 'image',

@@ -4,8 +4,8 @@
  */
 
 $url = 'https://www.google.com/recaptcha/api.js';
-if ($lang !== null):
-    $url = $url . '?hl = ' . $lang;
+if ($hl !== null):
+    $url = $url . '?hl = ' . $hl;
 endif;
 ?>
 <div id="_g-recaptcha"></div>
