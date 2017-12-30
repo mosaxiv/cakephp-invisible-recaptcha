@@ -2,6 +2,7 @@
 namespace InvisibleReCaptcha\Controller\Component;
 
 use Cake\Controller\Component;
+use Cake\Core\Configure;
 use Cake\Http\Client;
 
 /**
@@ -12,7 +13,7 @@ class InvisibleReCaptchaComponent extends Component
     const VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 
     protected $_defaultConfig = [
-        'secretkey' => '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe'
+        'secretkey' => null
     ];
 
     /**
@@ -20,6 +21,9 @@ class InvisibleReCaptchaComponent extends Component
      */
     public function initialize(array $config)
     {
+        if ($this->getConfig('secretkey') === null) {
+            $this->setConfig('secretkey', Configure::readOrFail('recaptcha.secretkey'));
+        }
     }
 
     /**

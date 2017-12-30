@@ -1,6 +1,7 @@
 <?php
 namespace InvisibleReCaptcha\View\Helper;
 
+use Cake\Core\Configure;
 use Cake\View\Helper;
 
 /**
@@ -10,11 +11,9 @@ class InvisibleReCaptchaHelper extends Helper
 {
     protected $_defaultConfig = [
         'lang' => null,
-        'data' => [
-            'sitekey' => '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
-            'badge' => 'bottomright',
-            'type' => 'image',
-        ],
+        'sitekey' => null,
+        'badge' => 'bottomright',
+        'type' => 'image',
     ];
 
     /**
@@ -22,6 +21,9 @@ class InvisibleReCaptchaHelper extends Helper
      */
     public function initialize(array $config)
     {
+        if ($this->getConfig('sitekey') === null) {
+            $this->setConfig('sitekey', Configure::readOrFail('recaptcha.sitekey'));
+        }
     }
 
     /**
