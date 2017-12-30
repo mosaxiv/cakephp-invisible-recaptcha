@@ -13,9 +13,9 @@ endif;
     class="g-recaptcha"
     data-size="invisible"
     data-callback="_submitForm"
-    data-sitekey="<?= $data['sitekey'] ?>"
-    data-badge="<?= $data['badge'] ?>"
-    data-type="<?= $data['type'] ?>"
+    data-sitekey="<?= $sitekey ?>"
+    data-badge="<?= $badge ?>"
+    data-type="<?= $type ?>"
 ></div>
 
 <script src="<?= $url ?>" async defer></script>
