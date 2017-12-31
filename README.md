@@ -1,5 +1,9 @@
 # cakephp-invisible-recaptcha plugin for CakePHP
 
+## Requirements
+
+* CakePHP 3.4.0+
+
 ## Installation
 
 ```
