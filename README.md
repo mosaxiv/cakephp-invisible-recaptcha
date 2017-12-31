@@ -6,12 +6,14 @@
 composer require mosaxiv/cakephp-invisible-recaptcha
 ```
 
+[obtain a invisible reCAPTCHA API key.](https://www.google.com/recaptcha/admin#list)
+
 ## SetUp
 
 ### Configure
 
 With the following test keys, you will always get No CAPTCHA and all verification requests will pass.  
-The reCAPTCHA widget will show a warning message to claim that it's only for testing purpose. Please do not use these keys for your production traffic.
+Please do not use these keys for your production traffic.
 
 ```php
 Configure::write('recaptcha', [
