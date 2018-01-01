@@ -1,5 +1,8 @@
 # cakephp-invisible-recaptcha plugin for CakePHP
 
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Build Status](https://travis-ci.org/mosaxiv/cakephp-invisible-recaptcha.svg?branch=master)](https://travis-ci.org/mosaxiv/cakephp-invisible-recaptcha)
+
 ## Requirements
 
 * CakePHP 3.4.0+
