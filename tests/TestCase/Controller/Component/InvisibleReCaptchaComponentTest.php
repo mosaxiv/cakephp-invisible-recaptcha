@@ -53,4 +53,18 @@ class InvisibleReCaptchaComponentTest extends TestCase
         Configure::delete('recaptcha.secretkey');
         new InvisibleReCaptchaComponent($this->registry);
     }
+
+    public function testConfigurationOverWrite()
+    {
+        $invisibleReCaptcha = new InvisibleReCaptchaComponent($this->registry);
+        $this->assertEquals('test-key', $invisibleReCaptcha->getConfig('sitekey'));
+        $this->assertEquals('test-key', $invisibleReCaptcha->getConfig('secretkey'));
+
+        $invisibleReCaptcha = new InvisibleReCaptchaComponent($this->registry, [
+            'sitekey' => 'OverWriteKey1',
+            'secretkey' => 'OverWriteKey2'
+        ]);
+        $this->assertEquals('OverWriteKey1', $invisibleReCaptcha->getConfig('sitekey'));
+        $this->assertEquals('OverWriteKey2', $invisibleReCaptcha->getConfig('secretkey'));
+    }
 }
