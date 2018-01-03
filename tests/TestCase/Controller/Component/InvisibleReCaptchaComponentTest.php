@@ -67,4 +67,10 @@ class InvisibleReCaptchaComponentTest extends TestCase
         $this->assertEquals('OverWriteKey1', $invisibleReCaptcha->getConfig('sitekey'));
         $this->assertEquals('OverWriteKey2', $invisibleReCaptcha->getConfig('secretkey'));
     }
+
+    public function testLoadHelper()
+    {
+        new InvisibleReCaptchaComponent($this->registry);
+        $this->assertArrayHasKey('InvisibleReCaptcha.InvisibleReCaptcha', $this->controller->viewBuilder()->getHelpers());
+    }
 }
