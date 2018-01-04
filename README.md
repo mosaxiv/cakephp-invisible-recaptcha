@@ -76,3 +76,7 @@ if ($this->InvisibleReCaptcha->verify()) {
 
 use [ServerRequest::clientIp](https://book.cakephp.org/3.0/en/controllers/request-response.html#Cake\Http\ServerRequest::clientIp) to get the IP address.  
 See https://book.cakephp.org/3.0/en/controllers/request-response.html#trusting-proxy-headers
+
+# Translate
+
+[日本語](https://qiita.com/mosaxiv/items/7b1a734cbd5dd30c7db9)
