@@ -66,6 +66,6 @@ class InvisibleReCaptchaComponent extends Component
             'remoteip' => $request->clientIp(),
         ]);
 
-        return $response->json;
+        return $response->getJson();
     }
 }
